@@ -1,0 +1,6 @@
+required_splits: [train, val, test, test_spatial]
+min_label_fraction: 0.90
+min_hrrr_fraction: 0.99
+min_current_fraction: 0.90
+min_overview_fraction: 0.95
+max_source_failures: 0

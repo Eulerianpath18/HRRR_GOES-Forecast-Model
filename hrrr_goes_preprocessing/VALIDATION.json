@@ -1,0 +1,80 @@
+{
+  "package_version": "0.4.0",
+  "source_id": "d8ddc72e9d9c2c2b6cab",
+  "automated": {
+    "passed": 38,
+    "skipped": 1,
+    "skipped_reason": "Multiworker IPC requires ARC; FORECAST_TEST_MULTIPROCESS=1 enables the check in the Slurm self-test."
+  },
+  "synthetic_end_to_end": {
+    "rows": 1040,
+    "results": "Produced during validation; synthetic prediction files are not research results.",
+    "synthetic": true,
+    "trained_runs": 6,
+    "selected_runs": 6
+  },
+  "real_source_check": {
+    "synthetic": false,
+    "report": {
+      "rows": 48,
+      "labelled_rows": 46,
+      "hrrr_rows": 48,
+      "overview_rows": 48,
+      "splits": {
+        "unsplit": 48
+      },
+      "violations": [],
+      "failures": 0
+    },
+    "image_pixels": 64,
+    "missing_labels": [
+      "GCK_20210101T0000Z_h06",
+      "GCK_20210101T0000Z_h12"
+    ],
+    "purpose": "Source availability and alignment, not forecast-skill estimation",
+    "validation_release": "0.3.0; retained evidence"
+  },
+  "other_checks": [
+    "pip check passed",
+    "bash -n passed for all ARC shell scripts",
+    "compileall passed",
+    "Slurm dependency wiring tested with a mocked scheduler; no real jobs submitted"
+  ],
+  "not_executed": [
+    "UCalgary ARC Slurm jobs",
+    "CUDA training",
+    "complete four-year import",
+    "production research training",
+    "Windows GUI execution",
+    "Contemporary-cycle service availability",
+    "Research model skill or GOES-16 to GOES-19 transfer"
+  ],
+  "date_utc": "2026-11-15",
+  "desktop": {
+    "interface_checked": "Linux Tkinter; Windows not executed",
+    "model_exports": 6,
+    "export_predictions_finite": 6,
+    "normalization": "Saved training values; no live fitting",
+    "label_free_inference": "Checked without training archive or verification labels",
+    "masked_budget_check": 0.05,
+    "forecast_gui_sha256": "5a4151e2330e457f548fa858d0de9887a543816dd8ee2fd6980aa9e63e648820",
+    "source_acquisition_check": {
+      "description": "Historical replay of input-only GUI fetch in a worker thread",
+      "init_utc": "2025-08-01T00:00:00+00:00",
+      "station_id": "DEN",
+      "satellite": 19,
+      "report": {
+        "rows": 2,
+        "labelled_rows": 0,
+        "hrrr_rows": 2,
+        "overview_rows": 2,
+        "splits": {
+          "unsplit": 2
+        },
+        "violations": [],
+        "failures": 0
+      },
+      "not_a_current_cycle_availability_test": true
+    }
+  }
+}

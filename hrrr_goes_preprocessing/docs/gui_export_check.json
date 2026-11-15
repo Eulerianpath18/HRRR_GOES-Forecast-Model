@@ -1,0 +1,32 @@
+[
+  {
+    "model": "direct_full_hybrid_lr0.005_seed3.pt",
+    "finite_prediction": true,
+    "optional_cost": 3.05
+  },
+  {
+    "model": "direct_masked_hybrid_lr0.005_seed3.pt",
+    "finite_prediction": true,
+    "optional_cost": 0.0
+  },
+  {
+    "model": "direct_numeric_mlp_lr0.005_seed3.pt",
+    "finite_prediction": true,
+    "optional_cost": 0.05
+  },
+  {
+    "model": "mos_full_hybrid_lr0.005_seed3.pt",
+    "finite_prediction": true,
+    "optional_cost": 3.15
+  },
+  {
+    "model": "mos_masked_hybrid_lr0.005_seed3.pt",
+    "finite_prediction": true,
+    "optional_cost": 0.05
+  },
+  {
+    "model": "mos_numeric_mlp_lr0.005_seed3.pt",
+    "finite_prediction": true,
+    "optional_cost": 0.15000000000000002
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "description": "Historical replay of input-only GUI fetch in a worker thread",
+  "init_utc": "2025-08-01T00:00:00+00:00",
+  "station_id": "DEN",
+  "satellite": 19,
+  "report": {
+    "rows": 2,
+    "labelled_rows": 0,
+    "hrrr_rows": 2,
+    "overview_rows": 2,
+    "splits": {
+      "unsplit": 2
+    },
+    "violations": [],
+    "failures": 0
+  },
+  "not_a_current_cycle_availability_test": true
+}

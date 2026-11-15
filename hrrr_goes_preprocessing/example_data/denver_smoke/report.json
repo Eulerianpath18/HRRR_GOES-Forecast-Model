@@ -1,0 +1,11 @@
+{
+  "rows": 2,
+  "labelled_rows": 2,
+  "hrrr_rows": 2,
+  "overview_rows": 2,
+  "splits": {
+    "unsplit": 2
+  },
+  "violations": [],
+  "failures": 0
+}

@@ -1,0 +1,20 @@
+{
+  "synthetic": false,
+  "report": {
+    "rows": 48,
+    "labelled_rows": 46,
+    "hrrr_rows": 48,
+    "overview_rows": 48,
+    "splits": {
+      "unsplit": 48
+    },
+    "violations": [],
+    "failures": 0
+  },
+  "image_pixels": 64,
+  "missing_labels": [
+    "GCK_20210101T0000Z_h06",
+    "GCK_20210101T0000Z_h12"
+  ],
+  "purpose": "Source availability and alignment, not forecast-skill estimation"
+}

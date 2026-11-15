@@ -1,0 +1,18 @@
+{
+  "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+  "bytes": 3226357,
+  "downloaded_bytes_this_call": 0,
+  "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+  "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+  "created_utc": "2020-12-31T23:54:08+00:00",
+  "available_utc": "2020-12-31T23:59:08+00:00",
+  "station": {
+    "station_id": "DEN",
+    "latitude": 39.8328,
+    "longitude": -104.6575,
+    "iem_network": "CO_ASOS"
+  },
+  "valid_fraction": 1.0,
+  "grid": "AEQD, north up, east right; endpoints +/- footprint/2",
+  "schema": 2
+}

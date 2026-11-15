@@ -1,0 +1,40 @@
+start: '2025-08-01'
+end: '2025-08-02'
+cycles: [0]
+leads: [6, 12]
+stations: stations.csv
+# HRRR is not available at nominal initialization. This is an assumed deadline,
+# not a measured historical publication timestamp. Observational inputs use init.
+issue_delay_minutes: 90
+observation_latency_minutes: 10
+goes_latency_minutes: 5
+label_tolerance_minutes: 20
+input_tolerance_minutes: 90
+history_hours: [3, 6, 24]
+max_grid_distance_km: 10
+strict: true
+satellite:
+  enabled: true
+  number: 19
+  bands: [13, 8]
+  lookback_minutes: 60
+  footprint_km: 1600
+  pixels: 800
+  overview_band: 13
+  overview_pixels: 32
+  min_valid_fraction: 0.8
+  lead_footprints_km: {6: 400, 12: 800, 24: 1200, 48: 1600}
+# Each field is a distinct GRIB message; downloads are shared across stations.
+hrrr_fields:
+  - {name: hrrr_t2m_c, search: ':TMP:2 m above ground:', variable: t2m, units: K, offset: -273.15}
+  - {name: hrrr_u10_ms, search: ':UGRD:10 m above ground:', variable: u10, units: 'm s**-1', offset: 0}
+  - {name: hrrr_v10_ms, search: ':VGRD:10 m above ground:', variable: v10, units: 'm s**-1', offset: 0}
+  - {name: hrrr_d2m_c, search: ':DPT:2 m above ground:', variable: d2m, units: K, offset: -273.15}
+actions:
+  - {id: history, kind: tabular, columns: [obs_lag3_c, obs_lag6_c, obs_lag24_c], modes: [direct, mos], cost_units: 0.05}
+  - {id: hrrr_wind, kind: tabular, columns: [hrrr_u10_ms, hrrr_v10_ms], modes: [mos], cost_units: 0.05}
+  - {id: hrrr_dewpoint, kind: tabular, columns: [hrrr_d2m_c], modes: [mos], cost_units: 0.05}
+  - {id: infrared_local, kind: satellite, band: 13, pixels: 128, scale: 0.5, modes: [direct, mos], cost_units: 1.0}
+  - {id: infrared_context, kind: satellite, band: 13, pixels: 128, scale: 1.0, modes: [direct, mos], cost_units: 1.0}
+  - {id: water_vapour, kind: satellite, band: 8, pixels: 128, scale: 1.0, modes: [direct, mos], cost_units: 1.0}
+splits: null

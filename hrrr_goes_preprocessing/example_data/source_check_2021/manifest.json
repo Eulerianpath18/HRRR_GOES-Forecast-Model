@@ -1,0 +1,4228 @@
+{
+  "version": 2,
+  "fingerprint": "667a15127011f07f84e2",
+  "core_features": [
+    "station_lat",
+    "station_lon",
+    "lead_h",
+    "hour_sin",
+    "hour_cos",
+    "year_sin",
+    "year_cos",
+    "obs_current_c",
+    "obs_age_minutes"
+  ],
+  "mos_extra": [
+    "hrrr_t2m_c"
+  ],
+  "actions": [
+    {
+      "id": "history",
+      "kind": "tabular",
+      "columns": [
+        "obs_lag3_c",
+        "obs_lag6_c",
+        "obs_lag24_c"
+      ],
+      "modes": [
+        "direct",
+        "mos"
+      ],
+      "cost_units": 0.05
+    },
+    {
+      "id": "hrrr_wind",
+      "kind": "tabular",
+      "columns": [
+        "hrrr_u10_ms",
+        "hrrr_v10_ms"
+      ],
+      "modes": [
+        "mos"
+      ],
+      "cost_units": 0.05
+    },
+    {
+      "id": "hrrr_dewpoint",
+      "kind": "tabular",
+      "columns": [
+        "hrrr_d2m_c"
+      ],
+      "modes": [
+        "mos"
+      ],
+      "cost_units": 0.05
+    },
+    {
+      "id": "infrared_local",
+      "kind": "satellite",
+      "band": 13,
+      "pixels": 128,
+      "scale": 0.5,
+      "modes": [
+        "direct",
+        "mos"
+      ],
+      "cost_units": 1.0
+    },
+    {
+      "id": "infrared_context",
+      "kind": "satellite",
+      "band": 13,
+      "pixels": 128,
+      "scale": 1.0,
+      "modes": [
+        "direct",
+        "mos"
+      ],
+      "cost_units": 1.0
+    },
+    {
+      "id": "water_vapour",
+      "kind": "satellite",
+      "band": 8,
+      "pixels": 128,
+      "scale": 1.0,
+      "modes": [
+        "direct",
+        "mos"
+      ],
+      "cost_units": 1.0
+    }
+  ],
+  "satellite": {
+    "prepare_action_crops": true,
+    "enabled": true,
+    "number": 16,
+    "bands": [
+      13,
+      8
+    ],
+    "lookback_minutes": 60,
+    "footprint_km": 1600,
+    "pixels": 64,
+    "overview_band": 13,
+    "overview_pixels": 32,
+    "min_valid_fraction": 0.8,
+    "lead_footprints_km": {
+      "6": 400,
+      "12": 800,
+      "24": 1200,
+      "48": 1600
+    }
+  },
+  "samples": {
+    "DEN_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/3594119804a5635c6fd3.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/fbb4d49b6902143593ee.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/0d07e08db553c87c0d3c.npz",
+        "infrared_context": "crops/1444be6f8517fbf2a2bd.npz",
+        "water_vapour": "crops/d52bfbf541324f400c03.npz"
+      }
+    },
+    "COS_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/0f4893aa7e92a19de760.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/9ee41e7041ac2878baaf.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/d0d160146ce737f30206.npz",
+        "infrared_context": "crops/8464a26b9017eed16940.npz",
+        "water_vapour": "crops/f6aa7a4c3018285e422e.npz"
+      }
+    },
+    "PUB_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e79d8a0a33b2a9a9b0eb.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/c31473f09d7718865642.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/ed022c12e0ab054ef4ce.npz",
+        "infrared_context": "crops/efee3425752abebeaade.npz",
+        "water_vapour": "crops/b0253fbfad06cd35a9f2.npz"
+      }
+    },
+    "AKO_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e98ca17b49d64b9c675c.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/3dff7f3853f53b17f40e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/2dbd666e9fc79b873ec7.npz",
+        "infrared_context": "crops/c269513522e3dad9c531.npz",
+        "water_vapour": "crops/45935d2fe1d57300d722.npz"
+      }
+    },
+    "LIC_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/0fb5da0f9d771acdf03e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/74bda501d7f366c39be4.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:55:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:55:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:55:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/371f7e04d61e7a4fb818.npz",
+        "infrared_context": "crops/8add8f3d4c853e41e624.npz",
+        "water_vapour": "crops/dee8aff2d5e0d93a168a.npz"
+      }
+    },
+    "TAD_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e057f6a53d7441d5ce5b.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/358e83dda74eb7a9d0ea.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/0848fe8e0701d2be445b.npz",
+        "infrared_context": "crops/4960a9485b11130e4169.npz",
+        "water_vapour": "crops/c56770a097043168999f.npz"
+      }
+    },
+    "CYS_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/8aca63fb9aedbca0568c.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/7e2fe8d4247d0d6dc61e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/9719424862354b2c6846.npz",
+        "infrared_context": "crops/fefc94be824d79cebaca.npz",
+        "water_vapour": "crops/48c1e91a122ccdc21100.npz"
+      }
+    },
+    "GLD_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/2c49adef13df8909d5b2.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/409d13bee6b62cd1a398.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/b932c204231d00b09aff.npz",
+        "infrared_context": "crops/bbd1bc3cdfc4f3b624fb.npz",
+        "water_vapour": "crops/5a5b6cc0e32cfcc1ed15.npz"
+      }
+    },
+    "GCK_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/70420597e74e501c3bf6.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/0b452b4d81593e6edd92.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/675f86021836dbe44614.npz",
+        "infrared_context": "crops/1653aff4f7b85c61cb85.npz",
+        "water_vapour": "crops/85337bc2ba8e74487a12.npz"
+      }
+    },
+    "DDC_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/1f0e5c8ddf7355bb1022.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/a569121392c4aaebb0f3.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:52:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:52:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:52:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/f92fe0843008a712c167.npz",
+        "infrared_context": "crops/f6afa2cf1f8c610d2720.npz",
+        "water_vapour": "crops/60006eee6e02902215a0.npz"
+      }
+    },
+    "IML_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/1105dba70b58c4843bf5.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/edac73a5e28e992550f0.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/928b5a1e1cb3a0f756a6.npz",
+        "infrared_context": "crops/03a4f20da4d62b9142a3.npz",
+        "water_vapour": "crops/9d2b0583d2f68b4f39a5.npz"
+      }
+    },
+    "LBF_20210101T0000Z_h06": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e8db37ed987823a30302.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/223eb2708db3e537e70a.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/dfc4f477351e9e20fd12.npz",
+        "infrared_context": "crops/d0c63eadb8c47d4a8453.npz",
+        "water_vapour": "crops/add888d2d43eac160c20.npz"
+      }
+    },
+    "DEN_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/3594119804a5635c6fd3.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/fbb4d49b6902143593ee.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/1444be6f8517fbf2a2bd.npz",
+        "infrared_context": "crops/4040b09b5c6a736567b4.npz",
+        "water_vapour": "crops/86c8f13c61d97709682a.npz"
+      }
+    },
+    "COS_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/0f4893aa7e92a19de760.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/9ee41e7041ac2878baaf.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/8464a26b9017eed16940.npz",
+        "infrared_context": "crops/9e9421c82814442731c8.npz",
+        "water_vapour": "crops/cd5bad6392e8b2e0cf20.npz"
+      }
+    },
+    "PUB_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e79d8a0a33b2a9a9b0eb.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/c31473f09d7718865642.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/efee3425752abebeaade.npz",
+        "infrared_context": "crops/0febe74f4ae962beb005.npz",
+        "water_vapour": "crops/f9dca3b739770691e88b.npz"
+      }
+    },
+    "AKO_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e98ca17b49d64b9c675c.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/3dff7f3853f53b17f40e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/c269513522e3dad9c531.npz",
+        "infrared_context": "crops/34ba87198c39afda78c4.npz",
+        "water_vapour": "crops/43ee829c19e52e2f79e4.npz"
+      }
+    },
+    "LIC_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/0fb5da0f9d771acdf03e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/74bda501d7f366c39be4.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:55:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:55:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:55:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/8add8f3d4c853e41e624.npz",
+        "infrared_context": "crops/b399696abbcb64a7e9b5.npz",
+        "water_vapour": "crops/adda4ed6f3d0dded8e68.npz"
+      }
+    },
+    "TAD_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e057f6a53d7441d5ce5b.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/358e83dda74eb7a9d0ea.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/4960a9485b11130e4169.npz",
+        "infrared_context": "crops/96276f466a60b8d6f9da.npz",
+        "water_vapour": "crops/a8b3909f4fe1cf25d438.npz"
+      }
+    },
+    "CYS_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/8aca63fb9aedbca0568c.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/7e2fe8d4247d0d6dc61e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/fefc94be824d79cebaca.npz",
+        "infrared_context": "crops/db3ba590765bb6f5f707.npz",
+        "water_vapour": "crops/cf821bb8ba63b9b25c5a.npz"
+      }
+    },
+    "GLD_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/2c49adef13df8909d5b2.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/409d13bee6b62cd1a398.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/bbd1bc3cdfc4f3b624fb.npz",
+        "infrared_context": "crops/c5dff71ee9df71300d71.npz",
+        "water_vapour": "crops/9ee53165011cb147dcfd.npz"
+      }
+    },
+    "GCK_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/70420597e74e501c3bf6.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/0b452b4d81593e6edd92.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/1653aff4f7b85c61cb85.npz",
+        "infrared_context": "crops/0253cd937825771efc5c.npz",
+        "water_vapour": "crops/a8d3ff4118caf3a2e5bb.npz"
+      }
+    },
+    "DDC_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/1f0e5c8ddf7355bb1022.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/a569121392c4aaebb0f3.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:52:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:52:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:52:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/f6afa2cf1f8c610d2720.npz",
+        "infrared_context": "crops/db1206f228abfbf14581.npz",
+        "water_vapour": "crops/bf008d9e2984b9209188.npz"
+      }
+    },
+    "IML_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/1105dba70b58c4843bf5.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/edac73a5e28e992550f0.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/03a4f20da4d62b9142a3.npz",
+        "infrared_context": "crops/8ebfb8e2ec41270af075.npz",
+        "water_vapour": "crops/0760f91e49d121741d83.npz"
+      }
+    },
+    "LBF_20210101T0000Z_h12": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e8db37ed987823a30302.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/223eb2708db3e537e70a.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/d0c63eadb8c47d4a8453.npz",
+        "infrared_context": "crops/ac6e88c97edd93402453.npz",
+        "water_vapour": "crops/917cbe879ed029825052.npz"
+      }
+    },
+    "DEN_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/3594119804a5635c6fd3.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/fbb4d49b6902143593ee.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/e2ebf0ae60e5286a7de9.npz",
+        "infrared_context": "crops/8d80a8491e332a0cbbb1.npz",
+        "water_vapour": "crops/243dde3ba6c44d7ac75c.npz"
+      }
+    },
+    "COS_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/0f4893aa7e92a19de760.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/9ee41e7041ac2878baaf.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/91d58150c9fdbcaf07ec.npz",
+        "infrared_context": "crops/8f1ba56142ebced17233.npz",
+        "water_vapour": "crops/4b40e7a77df0ae0c18ec.npz"
+      }
+    },
+    "PUB_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e79d8a0a33b2a9a9b0eb.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/c31473f09d7718865642.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/3d69cc81e0b36ed120ec.npz",
+        "infrared_context": "crops/3c6ed86a15cbc79ac2d6.npz",
+        "water_vapour": "crops/f11304800796a07ba265.npz"
+      }
+    },
+    "AKO_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e98ca17b49d64b9c675c.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/3dff7f3853f53b17f40e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/7c678b873516f81f3a02.npz",
+        "infrared_context": "crops/a46ef6164c9de2c4a46e.npz",
+        "water_vapour": "crops/b3292accbedb6ef7acb3.npz"
+      }
+    },
+    "LIC_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/0fb5da0f9d771acdf03e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/74bda501d7f366c39be4.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:55:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:55:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:55:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/8e1913a377e26000217e.npz",
+        "infrared_context": "crops/b0353f6c57541a0e883a.npz",
+        "water_vapour": "crops/63a428586475411d30fd.npz"
+      }
+    },
+    "TAD_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e057f6a53d7441d5ce5b.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/358e83dda74eb7a9d0ea.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/affa59ccfcb51ba955bb.npz",
+        "infrared_context": "crops/7cd9fb14082443f35595.npz",
+        "water_vapour": "crops/7269849cc9609947a6a3.npz"
+      }
+    },
+    "CYS_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/8aca63fb9aedbca0568c.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/7e2fe8d4247d0d6dc61e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/d99ff4bcd5f25cb8d8a7.npz",
+        "infrared_context": "crops/880ed64966e3b7918161.npz",
+        "water_vapour": "crops/4fd7971b1b1bc8dd69e5.npz"
+      }
+    },
+    "GLD_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/2c49adef13df8909d5b2.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/409d13bee6b62cd1a398.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/9d60c52212abce091425.npz",
+        "infrared_context": "crops/47ececf191ee2db09fcb.npz",
+        "water_vapour": "crops/b23789494c4575e94396.npz"
+      }
+    },
+    "GCK_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/70420597e74e501c3bf6.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/0b452b4d81593e6edd92.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/08e497bf4fe4854bba6b.npz",
+        "infrared_context": "crops/48ed83fdf5b8df76d274.npz",
+        "water_vapour": "crops/ce6c1e197aa3c83333e5.npz"
+      }
+    },
+    "DDC_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/1f0e5c8ddf7355bb1022.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/a569121392c4aaebb0f3.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:52:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:52:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:52:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/3ccd70f9cd133768a00d.npz",
+        "infrared_context": "crops/6cad2c12f602fa6751ec.npz",
+        "water_vapour": "crops/4e853108c53059c177df.npz"
+      }
+    },
+    "IML_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/1105dba70b58c4843bf5.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/edac73a5e28e992550f0.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/cee4ef7ac77e8e742cda.npz",
+        "infrared_context": "crops/8028dbd048107aa10c86.npz",
+        "water_vapour": "crops/a5e6c0332a21b65cb168.npz"
+      }
+    },
+    "LBF_20210101T0000Z_h24": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e8db37ed987823a30302.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/223eb2708db3e537e70a.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/77ddd440f760b7e258fd.npz",
+        "infrared_context": "crops/0bffc7367160eac0444d.npz",
+        "water_vapour": "crops/b25ce7268a7f538bffa2.npz"
+      }
+    },
+    "DEN_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/3594119804a5635c6fd3.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/fbb4d49b6902143593ee.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/4040b09b5c6a736567b4.npz",
+        "infrared_context": "crops/5a540d519c32f6e15e7f.npz",
+        "water_vapour": "crops/a22c07fe284ce34a62d1.npz"
+      }
+    },
+    "COS_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/0f4893aa7e92a19de760.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/9ee41e7041ac2878baaf.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/9e9421c82814442731c8.npz",
+        "infrared_context": "crops/347aa6a6cb9f6aac0b98.npz",
+        "water_vapour": "crops/3622bb9ea9928bbf0d98.npz"
+      }
+    },
+    "PUB_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e79d8a0a33b2a9a9b0eb.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/c31473f09d7718865642.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/0febe74f4ae962beb005.npz",
+        "infrared_context": "crops/ddb36ac6ae8602edac2b.npz",
+        "water_vapour": "crops/2b6818a49d5d42034e2e.npz"
+      }
+    },
+    "AKO_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e98ca17b49d64b9c675c.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/3dff7f3853f53b17f40e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/34ba87198c39afda78c4.npz",
+        "infrared_context": "crops/0562c72a254324f2f57b.npz",
+        "water_vapour": "crops/c2473232ab2bc8bbc3e0.npz"
+      }
+    },
+    "LIC_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/0fb5da0f9d771acdf03e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/74bda501d7f366c39be4.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:55:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:55:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:55:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/b399696abbcb64a7e9b5.npz",
+        "infrared_context": "crops/0b16abd3506d9797dfee.npz",
+        "water_vapour": "crops/215b44a3fcde8050bb4a.npz"
+      }
+    },
+    "TAD_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e057f6a53d7441d5ce5b.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/358e83dda74eb7a9d0ea.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/96276f466a60b8d6f9da.npz",
+        "infrared_context": "crops/cb71ac22aef4ba6f5945.npz",
+        "water_vapour": "crops/70b8ff3d876b5f98773a.npz"
+      }
+    },
+    "CYS_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/8aca63fb9aedbca0568c.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/7e2fe8d4247d0d6dc61e.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/db3ba590765bb6f5f707.npz",
+        "infrared_context": "crops/4410e96a3b055021f0a6.npz",
+        "water_vapour": "crops/e5ff9a228e9eef9e2f0c.npz"
+      }
+    },
+    "GLD_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/2c49adef13df8909d5b2.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/409d13bee6b62cd1a398.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/c5dff71ee9df71300d71.npz",
+        "infrared_context": "crops/6573c7d9cd8fbb12e88e.npz",
+        "water_vapour": "crops/efb6c10ad4158f3822b6.npz"
+      }
+    },
+    "GCK_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/70420597e74e501c3bf6.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/0b452b4d81593e6edd92.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:54:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:54:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:54:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/0253cd937825771efc5c.npz",
+        "infrared_context": "crops/3d6507ed421c0862d11c.npz",
+        "water_vapour": "crops/248e7281d6c35ba5a5d0.npz"
+      }
+    },
+    "DDC_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/1f0e5c8ddf7355bb1022.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/a569121392c4aaebb0f3.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:52:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:52:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:52:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/db1206f228abfbf14581.npz",
+        "infrared_context": "crops/d26e0ed4e70ca2878d9e.npz",
+        "water_vapour": "crops/2fcb52de9cb21a838b3d.npz"
+      }
+    },
+    "IML_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/1105dba70b58c4843bf5.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/edac73a5e28e992550f0.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/8ebfb8e2ec41270af075.npz",
+        "infrared_context": "crops/a306fd9c9fa957ca4b03.npz",
+        "water_vapour": "crops/5fa5e953f31fbe05dca0.npz"
+      }
+    },
+    "LBF_20210101T0000Z_h48": {
+      "satellite": {
+        "13": {
+          "path": "satellite/e8db37ed987823a30302.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+          "bytes": 4396539,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+          "created_utc": "2020-12-31T23:54:08.700000+00:00",
+          "available_utc": "2020-12-31T23:59:08.700000+00:00"
+        },
+        "8": {
+          "path": "satellite/223eb2708db3e537e70a.npz",
+          "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+          "bytes": 3226357,
+          "downloaded_bytes_this_call": 0,
+          "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+          "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+          "created_utc": "2020-12-31T23:54:08+00:00",
+          "available_utc": "2020-12-31T23:59:08+00:00"
+        }
+      },
+      "tabular_resources": {
+        "obs_lag3_c": [],
+        "obs_lag6_c": [],
+        "obs_lag24_c": [],
+        "hrrr_t2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c"
+        ],
+        "hrrr_u10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms"
+        ],
+        "hrrr_v10_ms": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms"
+        ],
+        "hrrr_d2m_c": [
+          "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c"
+        ]
+      },
+      "history_observation_utc": {
+        "obs_lag3_c": "2020-12-31 20:53:00+00:00",
+        "obs_lag6_c": "2020-12-31 17:53:00+00:00",
+        "obs_lag24_c": "2020-12-30 23:53:00+00:00"
+      },
+      "prepared_actions": {
+        "infrared_local": "crops/ac6e88c97edd93402453.npz",
+        "infrared_context": "crops/6f983934633a9f5a2ca2.npz",
+        "water_vapour": "crops/e91f10827a91ee46e462.npz"
+      }
+    }
+  },
+  "resources": {
+    "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc": {
+      "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C13_G16_s20203662351176_e20203662353561_c20203662354087.nc",
+      "bytes": 4396539,
+      "downloaded_bytes_this_call": 0,
+      "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+      "scan_end_utc": "2020-12-31T23:53:56.100000+00:00",
+      "created_utc": "2020-12-31T23:54:08.700000+00:00",
+      "available_utc": "2020-12-31T23:59:08.700000+00:00"
+    },
+    "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc": {
+      "resource_id": "noaa-goes16/ABI-L2-CMIPC/2020/366/23/OR_ABI-L2-CMIPC-M6C08_G16_s20203662351176_e20203662353549_c20203662354080.nc",
+      "bytes": 3226357,
+      "downloaded_bytes_this_call": 0,
+      "scan_start_utc": "2020-12-31T23:51:17.600000+00:00",
+      "scan_end_utc": "2020-12-31T23:53:54.900000+00:00",
+      "created_utc": "2020-12-31T23:54:08+00:00",
+      "available_utc": "2020-12-31T23:59:08+00:00"
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf06.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_t2m_c",
+      "bytes": 1223636,
+      "retrieved_utc": "2026-11-14T23:43:14.189271+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 6,
+        "field": {
+          "name": "hrrr_t2m_c",
+          "search": ":TMP:2 m above ground:",
+          "variable": "t2m",
+          "units": "K",
+          "offset": -273.15
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf06.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_u10_ms",
+      "bytes": 2381615,
+      "retrieved_utc": "2026-11-14T23:43:21.800983+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 6,
+        "field": {
+          "name": "hrrr_u10_ms",
+          "search": ":UGRD:10 m above ground:",
+          "variable": "u10",
+          "units": "m s**-1",
+          "offset": 0
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf06.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_v10_ms",
+      "bytes": 2381615,
+      "retrieved_utc": "2026-11-14T23:43:28.345859+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 6,
+        "field": {
+          "name": "hrrr_v10_ms",
+          "search": ":VGRD:10 m above ground:",
+          "variable": "v10",
+          "units": "m s**-1",
+          "offset": 0
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf06.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:6:hrrr_d2m_c",
+      "bytes": 1229375,
+      "retrieved_utc": "2026-11-14T23:43:35.439398+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 6,
+        "field": {
+          "name": "hrrr_d2m_c",
+          "search": ":DPT:2 m above ground:",
+          "variable": "d2m",
+          "units": "K",
+          "offset": -273.15
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf12.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_t2m_c",
+      "bytes": 1215545,
+      "retrieved_utc": "2026-11-14T23:43:48.981725+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 12,
+        "field": {
+          "name": "hrrr_t2m_c",
+          "search": ":TMP:2 m above ground:",
+          "variable": "t2m",
+          "units": "K",
+          "offset": -273.15
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf12.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_u10_ms",
+      "bytes": 2381615,
+      "retrieved_utc": "2026-11-14T23:43:56.269238+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 12,
+        "field": {
+          "name": "hrrr_u10_ms",
+          "search": ":UGRD:10 m above ground:",
+          "variable": "u10",
+          "units": "m s**-1",
+          "offset": 0
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf12.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_v10_ms",
+      "bytes": 2381615,
+      "retrieved_utc": "2026-11-14T23:44:03.418153+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 12,
+        "field": {
+          "name": "hrrr_v10_ms",
+          "search": ":VGRD:10 m above ground:",
+          "variable": "v10",
+          "units": "m s**-1",
+          "offset": 0
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf12.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:12:hrrr_d2m_c",
+      "bytes": 1251088,
+      "retrieved_utc": "2026-11-14T23:44:10.074434+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 12,
+        "field": {
+          "name": "hrrr_d2m_c",
+          "search": ":DPT:2 m above ground:",
+          "variable": "d2m",
+          "units": "K",
+          "offset": -273.15
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf24.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_t2m_c",
+      "bytes": 1172857,
+      "retrieved_utc": "2026-11-14T23:44:24.088230+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 24,
+        "field": {
+          "name": "hrrr_t2m_c",
+          "search": ":TMP:2 m above ground:",
+          "variable": "t2m",
+          "units": "K",
+          "offset": -273.15
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf24.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_u10_ms",
+      "bytes": 2381615,
+      "retrieved_utc": "2026-11-14T23:44:31.671431+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 24,
+        "field": {
+          "name": "hrrr_u10_ms",
+          "search": ":UGRD:10 m above ground:",
+          "variable": "u10",
+          "units": "m s**-1",
+          "offset": 0
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf24.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_v10_ms",
+      "bytes": 2381615,
+      "retrieved_utc": "2026-11-14T23:44:40.260353+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 24,
+        "field": {
+          "name": "hrrr_v10_ms",
+          "search": ":VGRD:10 m above ground:",
+          "variable": "v10",
+          "units": "m s**-1",
+          "offset": 0
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf24.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:24:hrrr_d2m_c",
+      "bytes": 1160788,
+      "retrieved_utc": "2026-11-14T23:44:47.866889+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 24,
+        "field": {
+          "name": "hrrr_d2m_c",
+          "search": ":DPT:2 m above ground:",
+          "variable": "d2m",
+          "units": "K",
+          "offset": -273.15
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf48.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_t2m_c",
+      "bytes": 1149004,
+      "retrieved_utc": "2026-11-14T23:45:02.418111+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 48,
+        "field": {
+          "name": "hrrr_t2m_c",
+          "search": ":TMP:2 m above ground:",
+          "variable": "t2m",
+          "units": "K",
+          "offset": -273.15
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf48.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_u10_ms",
+      "bytes": 2381615,
+      "retrieved_utc": "2026-11-14T23:45:09.577115+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 48,
+        "field": {
+          "name": "hrrr_u10_ms",
+          "search": ":UGRD:10 m above ground:",
+          "variable": "u10",
+          "units": "m s**-1",
+          "offset": 0
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf48.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_v10_ms",
+      "bytes": 2381615,
+      "retrieved_utc": "2026-11-14T23:45:17.354511+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 48,
+        "field": {
+          "name": "hrrr_v10_ms",
+          "search": ":VGRD:10 m above ground:",
+          "variable": "v10",
+          "units": "m s**-1",
+          "offset": 0
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    },
+    "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c": {
+      "source": "https://noaa-hrrr-bdp-pds.s3.amazonaws.com/hrrr.20210101/conus/hrrr.t00z.wrfsfcf48.grib2",
+      "resource_id": "hrrr:2021-01-01T00:00:00+00:00:48:hrrr_d2m_c",
+      "bytes": 1131335,
+      "retrieved_utc": "2026-11-14T23:45:24.810960+00:00",
+      "request": {
+        "init": "2021-01-01 00:00:00+00:00",
+        "lead": 48,
+        "field": {
+          "name": "hrrr_d2m_c",
+          "search": ":DPT:2 m above ground:",
+          "variable": "d2m",
+          "units": "K",
+          "offset": -273.15
+        },
+        "stations": [
+          {
+            "station_id": "DEN",
+            "latitude": 39.8328,
+            "longitude": -104.6575,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "COS",
+            "latitude": 38.8058,
+            "longitude": -104.7008,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "PUB",
+            "latitude": 38.29,
+            "longitude": -104.4983,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "AKO",
+            "latitude": 40.1756,
+            "longitude": -103.222,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "LIC",
+            "latitude": 39.2748,
+            "longitude": -103.6659,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "TAD",
+            "latitude": 37.2594,
+            "longitude": -104.3407,
+            "iem_network": "CO_ASOS"
+          },
+          {
+            "station_id": "CYS",
+            "latitude": 41.1556,
+            "longitude": -104.8105,
+            "iem_network": "WY_ASOS"
+          },
+          {
+            "station_id": "GLD",
+            "latitude": 39.3672,
+            "longitude": -101.6933,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "GCK",
+            "latitude": 37.9275,
+            "longitude": -100.7244,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "DDC",
+            "latitude": 37.7631,
+            "longitude": -99.9654,
+            "iem_network": "KS_ASOS"
+          },
+          {
+            "station_id": "IML",
+            "latitude": 40.5103,
+            "longitude": -101.6202,
+            "iem_network": "NE_ASOS"
+          },
+          {
+            "station_id": "LBF",
+            "latitude": 41.1219,
+            "longitude": -100.669,
+            "iem_network": "NE_ASOS"
+          }
+        ],
+        "max_distance": 10,
+        "schema": 2
+      }
+    }
+  },
+  "cost_units": "User-configured relative compute proxy; not measured seconds/FLOPs",
+  "availability": "Historical publication unknown: HRRR assumed at issue; IEM/GOES latency margins are assumptions",
+  "config": {
+    "start": "2021-01-01",
+    "end": "2021-01-02",
+    "cycles": [
+      0
+    ],
+    "leads": [
+      6,
+      12,
+      24,
+      48
+    ],
+    "stations": "/workspace/scratch/c0e5c3fcf676/arc_work/hrrr_goes_preprocessing/configs/stations_research.csv",
+    "issue_delay_minutes": 90,
+    "observation_latency_minutes": 10,
+    "goes_latency_minutes": 5,
+    "label_tolerance_minutes": 20,
+    "input_tolerance_minutes": 90,
+    "history_hours": [
+      3,
+      6,
+      24
+    ],
+    "max_grid_distance_km": 10,
+    "strict": true,
+    "satellite": {
+      "prepare_action_crops": true,
+      "enabled": true,
+      "number": 16,
+      "bands": [
+        13,
+        8
+      ],
+      "lookback_minutes": 60,
+      "footprint_km": 1600,
+      "pixels": 64,
+      "overview_band": 13,
+      "overview_pixels": 32,
+      "min_valid_fraction": 0.8,
+      "lead_footprints_km": {
+        "6": 400,
+        "12": 800,
+        "24": 1200,
+        "48": 1600
+      }
+    },
+    "hrrr_fields": [
+      {
+        "name": "hrrr_t2m_c",
+        "search": ":TMP:2 m above ground:",
+        "variable": "t2m",
+        "units": "K",
+        "offset": -273.15
+      },
+      {
+        "name": "hrrr_u10_ms",
+        "search": ":UGRD:10 m above ground:",
+        "variable": "u10",
+        "units": "m s**-1",
+        "offset": 0
+      },
+      {
+        "name": "hrrr_v10_ms",
+        "search": ":VGRD:10 m above ground:",
+        "variable": "v10",
+        "units": "m s**-1",
+        "offset": 0
+      },
+      {
+        "name": "hrrr_d2m_c",
+        "search": ":DPT:2 m above ground:",
+        "variable": "d2m",
+        "units": "K",
+        "offset": -273.15
+      }
+    ],
+    "actions": [
+      {
+        "id": "history",
+        "kind": "tabular",
+        "columns": [
+          "obs_lag3_c",
+          "obs_lag6_c",
+          "obs_lag24_c"
+        ],
+        "modes": [
+          "direct",
+          "mos"
+        ],
+        "cost_units": 0.05
+      },
+      {
+        "id": "hrrr_wind",
+        "kind": "tabular",
+        "columns": [
+          "hrrr_u10_ms",
+          "hrrr_v10_ms"
+        ],
+        "modes": [
+          "mos"
+        ],
+        "cost_units": 0.05
+      },
+      {
+        "id": "hrrr_dewpoint",
+        "kind": "tabular",
+        "columns": [
+          "hrrr_d2m_c"
+        ],
+        "modes": [
+          "mos"
+        ],
+        "cost_units": 0.05
+      },
+      {
+        "id": "infrared_local",
+        "kind": "satellite",
+        "band": 13,
+        "pixels": 128,
+        "scale": 0.5,
+        "modes": [
+          "direct",
+          "mos"
+        ],
+        "cost_units": 1.0
+      },
+      {
+        "id": "infrared_context",
+        "kind": "satellite",
+        "band": 13,
+        "pixels": 128,
+        "scale": 1.0,
+        "modes": [
+          "direct",
+          "mos"
+        ],
+        "cost_units": 1.0
+      },
+      {
+        "id": "water_vapour",
+        "kind": "satellite",
+        "band": 8,
+        "pixels": 128,
+        "scale": 1.0,
+        "modes": [
+          "direct",
+          "mos"
+        ],
+        "cost_units": 1.0
+      }
+    ],
+    "splits": null,
+    "sample_every_n_days": 1
+  }
+}

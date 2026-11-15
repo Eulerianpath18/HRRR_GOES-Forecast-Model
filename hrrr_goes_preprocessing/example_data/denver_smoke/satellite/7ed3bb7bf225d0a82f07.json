@@ -1,0 +1,18 @@
+{
+  "resource_id": "noaa-goes19/ABI-L2-CMIPC/2025/212/23/OR_ABI-L2-CMIPC-M6C08_G19_s20252122351179_e20252122353552_c20252122354039.nc",
+  "bytes": 3143449,
+  "downloaded_bytes_this_call": 3143449,
+  "scan_start_utc": "2025-07-31T23:51:17.900000+00:00",
+  "scan_end_utc": "2025-07-31T23:53:55.200000+00:00",
+  "created_utc": "2025-07-31T23:54:03.900000+00:00",
+  "available_utc": "2025-07-31T23:59:03.900000+00:00",
+  "station": {
+    "station_id": "DEN",
+    "latitude": 39.8617,
+    "longitude": -104.6731,
+    "iem_network": "CO_ASOS"
+  },
+  "valid_fraction": 1.0,
+  "grid": "AEQD, north up, east right; endpoints +/- footprint/2",
+  "schema": 2
+}

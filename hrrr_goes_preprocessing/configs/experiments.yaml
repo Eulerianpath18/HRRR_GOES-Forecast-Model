@@ -1,0 +1,36 @@
+modes: [direct, mos]
+seeds: [11, 29, 47]
+learning_rates: [0.001, 0.0003]
+policy_fraction: 0.2
+budgets: [0.0, 0.15, 1.15, 2.15, 3.15]
+test_splits: [test, test_spatial]
+bootstrap_replicates: 500
+profiles:
+  numeric_mlp: {kind: mlp, features: numeric, acquisition: fixed}
+  overview_hybrid: {kind: hybrid, features: numeric, acquisition: fixed}
+  full_hybrid: {kind: hybrid, features: all, acquisition: fixed}
+  masked_hybrid: {kind: hybrid, features: all, acquisition: random}
+training:
+  hidden: [128, 64]
+  embedding: 16
+  dropout: 0.1
+  batch_size: 128
+  epochs: 60
+  patience: 10
+  min_delta: 0.00001
+  weight_decay: 0.0001
+  gradient_clip: 5.0
+  checkpoint_batches: 100
+  workers: 2
+  threads: 4
+policy:
+  max_samples: 2000
+  states_per_sample: 3
+  ridge_alpha: 10.0
+  seed: 42
+baselines:
+  seed: 42
+  ridge_alphas: [0.01, 1.0, 10.0, 100.0, 1000.0]
+  gp_max_train: 2000
+  gp_length_scales: [1.0, 5.0, 10.0]
+  gp_noise: 0.1
